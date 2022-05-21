@@ -5,6 +5,7 @@ private String formaPagamento;
 private Pessoa pessoa;
 private double cpf;
 
+
 //construtor
 public Cliente(String nome, String telefone, String endereco, String formaPagamento, Pessoa pessoa, double cpf) {
 	super(nome, telefone, endereco);
