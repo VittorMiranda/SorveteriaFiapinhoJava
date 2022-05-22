@@ -8,7 +8,7 @@ public class Nota {
 	private Cliente cliente;
 	private Produto produto;
 public double numeropedido() {
- return //((1)+1) + cliente.getCpf()";
+ return 0;
 }
 
 public double totalM() {
