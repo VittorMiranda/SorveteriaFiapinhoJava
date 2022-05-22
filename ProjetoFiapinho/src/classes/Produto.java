@@ -21,7 +21,7 @@ public class Produto implements Serializable {
 
 
 	public String mostrarDados() {
-		return "\nNome: " + this.Nome + "\nValidade: " + this.validade + "\nPreï¿½o: " + this.preco + "\nPeso: " + this.peso + "\nQuantidade: " + this.quantidade + "\nTipo do produto: " + this.tipoproduto;
+		return "\nNome: " + this.Nome + "\nValidade: " + this.validade + "\nPreço: " + this.preco + "\nPeso: " + this.peso + "\nQuantidade: " + this.quantidade + "\nTipo do produto: " + this.tipoproduto;
 	}
 
 
