@@ -18,6 +18,7 @@ import java.awt.Container;
 
 import classes.Produto;
 import painel.PainelCadastroProdutos;
+import painel.PainelSorvete;
 
 
 public class TelaSorveteria extends JFrame {
@@ -104,6 +105,17 @@ public class TelaSorveteria extends JFrame {
 			@Override
 			public void menuCanceled(MenuEvent e) {
 				// TODO Auto-generated method stub
+				
+			}
+		});
+jmisorvetes.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				PainelSorvete painelSorvete = new PainelSorvete(produtos);
+				contentPane.removeAll();
+				contentPane.add(painelSorvete);
+				contentPane.validate();
 				
 			}
 		});
