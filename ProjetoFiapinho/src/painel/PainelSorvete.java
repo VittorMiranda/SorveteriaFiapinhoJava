@@ -75,7 +75,7 @@ public class PainelSorvete extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				jtaMostrarProdutos.setText("======================Sorvetes======================");
 				for (Produto produto : produtos) {
-					if (!jtfProdutos.getText().equalsIgnoreCase(null)) {
+					if (jtfProdutos.getText().equalsIgnoreCase(null)) {
 						if (produtos instanceof Produto) {jtaMostrarProdutos.append(produto.mostrarDados());
 							
 						}
