@@ -87,8 +87,8 @@ public class PainelCadastroProdutos extends JPanel {
 		jlpeso.setBounds(150, 190, 50, 20);
 		jtfpeso.setBounds(150, 210, 50, 20);
 		jltipoproduto.setBounds(150, 100, 80, 20);
-		jrboutros.setBounds(145, 120, 80, 20);
-		jrbsorvete.setBounds(145, 140, 80, 20);
+		jrboutros.setBounds(145, 140, 80, 20);
+		jrbsorvete.setBounds(145, 120, 80, 20);
 		jbCadastrar.setBounds(60, 250, 100, 40);
 		
 		
@@ -113,7 +113,6 @@ public class PainelCadastroProdutos extends JPanel {
 				if (jrbsorvete.isSelected()) tipoproduto = "Sorvete";
 				
 				produtos.add(new Produto(validade, nome, tipoproduto, preco, peso, quantidade));
-				
 				jtfnomeProduto.setText("");
 				jtfpeso.setText("");
 				jtfpreco.setText("");
