@@ -14,6 +14,8 @@ import javax.swing.JOptionPane;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 
+import arquivos.EscreverLerArquivos;
+
 import java.awt.Container;
 
 import classes.Cliente;
@@ -28,6 +30,7 @@ public class TelaSorveteria extends JFrame {
 	private JMenu jmarquivo,jmcadastro,jmExibir;
 	private JMenuItem jmisair,jmiProdutos,jmiPedidos,jmiperguntas,jmiprodutos,jmipedidos;
 	private Container contentPane;
+	private EscreverLerArquivos arquivo = new EscreverLerArquivos();
 	private List<Produto> produtos = new ArrayList<>();
 	private List<Cliente> clientes = new ArrayList<>();
 	
@@ -39,10 +42,21 @@ public class TelaSorveteria extends JFrame {
 		getContentPane().setBackground(new Color(245, 56, 56));
 		iniciarComponentes();
 		criarEventos();
+		escreverLerArquivos();
 		
 	}
 	
 	
+
+	private void escreverLerArquivos() {
+		if (arquivo.lerArquivo() != null) {
+			produtos = arquivo.lerArquivo();
+			
+		}
+		
+	}
+
+
 
 	private void iniciarComponentes() {
 		//criar objetos
