@@ -25,8 +25,8 @@ import painel.PainelSorvete;
 
 public class TelaSorveteria extends JFrame {
 	private JMenuBar Jmbbarra;
-	private JMenu jmarquivo,jmcadastro,jmprodutos,jmpedidos;
-	private JMenuItem jmisair,jmisorvetes,jmioutros,jmiperguntas;
+	private JMenu jmarquivo,jmcadastro,jmExibir;
+	private JMenuItem jmisair,jmiProdutos,jmiPedidos,jmiperguntas,jmiprodutos,jmipedidos;
 	private Container contentPane;
 	private List<Produto> produtos = new ArrayList<>();
 	private List<Cliente> clientes = new ArrayList<>();
@@ -48,13 +48,18 @@ public class TelaSorveteria extends JFrame {
 		//criar objetos
 		Jmbbarra = new JMenuBar();
 		setJMenuBar(Jmbbarra);
+		Jmbbarra.setBackground(Color.black);;
 		jmarquivo = new JMenu("Arquivo");
+		jmarquivo.setForeground(Color.white);
 		jmcadastro = new JMenu("Cadastro");
-		jmprodutos = new JMenu("Produtos");
-		jmpedidos = new JMenu("Pedidos");
+		jmcadastro.setForeground(Color.gray);
+		jmExibir = new JMenu("Exibir");
+		jmExibir.setForeground(Color.white);
+		jmipedidos = new JMenuItem("Pedidos");
+		jmiprodutos = new JMenuItem("Produtos");
 		jmisair = new JMenuItem("Sair");
-		jmisorvetes = new JMenuItem("Sorvetes");
-		jmioutros = new JMenuItem("Outros");
+		jmiProdutos = new JMenuItem("Produtos");
+		jmiPedidos = new JMenuItem("Pedidos");
 		jmiperguntas = new JMenuItem("Dúvidas Frequentes");
 		contentPane = getContentPane();
 		
@@ -62,16 +67,19 @@ public class TelaSorveteria extends JFrame {
 		//adicionar o menu a barra de  menu
 		Jmbbarra.add(jmarquivo);
 		Jmbbarra.add(jmcadastro);
-		Jmbbarra.add(jmprodutos);
-		Jmbbarra.add(jmpedidos);
+		Jmbbarra.add(jmExibir);
+		
+		jmcadastro.add(jmipedidos);
+		jmcadastro.add(jmiprodutos);
+		
 		
 		//adicionar o menu ao item menu
 		jmarquivo.add(jmiperguntas);
 		jmarquivo.add(jmisair);
 		
 		
-		jmprodutos.add(jmisorvetes);
-		jmprodutos.add(jmioutros);
+		jmExibir.add(jmiProdutos);
+		jmExibir.add(jmiPedidos);
 		
 	
 		
@@ -88,30 +96,32 @@ public class TelaSorveteria extends JFrame {
 			}
 		});
 		//evento do botao cadastrar
-		jmcadastro.addMenuListener(new MenuListener() {
+		jmipedidos.addActionListener(new ActionListener() {
 			
 			@Override
-			public void menuSelected(MenuEvent e) {
+			public void actionPerformed(ActionEvent e) {
+				PainelPedido painelPedido = new PainelPedido(clientes);
+				contentPane.removeAll();
+				contentPane.add(painelPedido);
+				contentPane.validate();
+				
+			}
+		});
+jmiprodutos.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
 				PainelCadastroProdutos cadastroProdutos = new PainelCadastroProdutos(produtos);
 				contentPane.removeAll();
 				contentPane.add(cadastroProdutos);
 				contentPane.validate();
 				
 			}
-			
-			@Override
-			public void menuDeselected(MenuEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void menuCanceled(MenuEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
 		});
-jmisorvetes.addActionListener(new ActionListener() {
+		
+		
+		
+jmiProdutos.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -122,30 +132,7 @@ jmisorvetes.addActionListener(new ActionListener() {
 				
 			}
 		});
-		jmpedidos.addMenuListener(new MenuListener() {
-			
-			@Override
-			public void menuSelected(MenuEvent e) {
-				PainelPedido painelPedido = new PainelPedido(clientes);
-				contentPane.removeAll();
-				contentPane.add(painelPedido);
-				contentPane.validate();
-				
-				
-			}
-			
-			@Override
-			public void menuDeselected(MenuEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void menuCanceled(MenuEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
+	
 		
 	}
 	
