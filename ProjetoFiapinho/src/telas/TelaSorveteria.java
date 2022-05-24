@@ -16,8 +16,10 @@ import javax.swing.event.MenuListener;
 
 import java.awt.Container;
 
+import classes.Cliente;
 import classes.Produto;
 import painel.PainelCadastroProdutos;
+import painel.PainelPedido;
 import painel.PainelSorvete;
 
 
@@ -27,6 +29,7 @@ public class TelaSorveteria extends JFrame {
 	private JMenuItem jmisair,jmisorvetes,jmioutros,jmiperguntas;
 	private Container contentPane;
 	private List<Produto> produtos = new ArrayList<>();
+	private List<Cliente> clientes = new ArrayList<>();
 	
 	//construtor
 	public TelaSorveteria(String title) throws HeadlessException {
@@ -119,7 +122,30 @@ jmisorvetes.addActionListener(new ActionListener() {
 				
 			}
 		});
-		
+		jmpedidos.addMenuListener(new MenuListener() {
+			
+			@Override
+			public void menuSelected(MenuEvent e) {
+				PainelPedido painelPedido = new PainelPedido(clientes);
+				contentPane.removeAll();
+				contentPane.add(painelPedido);
+				contentPane.validate();
+				
+				
+			}
+			
+			@Override
+			public void menuDeselected(MenuEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void menuCanceled(MenuEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		
 	}
 	
