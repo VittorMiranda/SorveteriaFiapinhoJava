@@ -54,10 +54,10 @@ public class PainelPedido extends JPanel {
 		jrbPix = new JRadioButton("Pix");
 		jrbPix.setOpaque(false);
 		jbPedir = new JButton("Pedir");
-		jlCPF = new JLabel("CPF");
+		jlCPF = new JLabel("CPF:");
 		jtfCPF = new JTextField();
 		bgFormaPagamento = new ButtonGroup();
-		jlDescricaoPedido = new JLabel("Descrição do Pedido");
+		jlDescricaoPedido = new JLabel("Descrição do Pedido:");
 		jtaArea = new JTextArea();
 		jspArea = new JScrollPane(jtaArea);
 		
@@ -97,11 +97,11 @@ public class PainelPedido extends JPanel {
 		jtfEnderoCliente.setBounds(10, 150, 200, 20);
 		jlDescricaoPedido.setBounds(10, 180, 120, 20);
 		jspArea.setBounds(10, 200, 200, 50);
-		jlFormaPagamento.setBounds(50, 280, 150, 20);
+		jlFormaPagamento.setBounds(120, 270, 150, 20);
 		jrbCartao.setBounds(10, 300, 70, 20);
-		jrbVale.setBounds(110, 300, 70, 20);
+		jrbVale.setBounds(80, 300, 130, 20);
 		jrbDinheiro.setBounds(210, 300, 80, 20);
-		jrbPix.setBounds(310, 300, 50, 20);
+		jrbPix.setBounds(290, 300, 50, 20);
 		jbPedir.setBounds(240, 200, 100, 40);
 		
 		
