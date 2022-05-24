@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -22,6 +23,7 @@ public class PainelPedido extends JPanel {
 	private JRadioButton jrbCartao, jrbVale, jrbDinheiro,jrbPix;
 	private ButtonGroup bgFormaPagamento;
 	private JTextArea jtaArea;
+	private JScrollPane jspArea;
 	private List<Cliente> clientes;
 	//construtor
 	public PainelPedido(List<Cliente> clientes) {
@@ -44,15 +46,20 @@ public class PainelPedido extends JPanel {
 		jtfEnderoCliente = new JTextField();
 		jlFormaPagamento = new JLabel("Forma de Pagamento");
 		jrbCartao = new JRadioButton("Cartão");
+		jrbCartao.setOpaque(false);
 		jrbVale = new JRadioButton("Vale Alimentação");
+		jrbVale.setOpaque(false);
 		jrbDinheiro = new JRadioButton("Dinheiro");
+		jrbDinheiro.setOpaque(false);
 		jrbPix = new JRadioButton("Pix");
+		jrbPix.setOpaque(false);
 		jbPedir = new JButton("Pedir");
 		jlCPF = new JLabel("CPF");
 		jtfCPF = new JTextField();
 		bgFormaPagamento = new ButtonGroup();
 		jlDescricaoPedido = new JLabel("Descrição do Pedido");
 		jtaArea = new JTextArea();
+		jspArea = new JScrollPane(jtaArea);
 		
 		//add
 		add(jlCPF);
@@ -76,6 +83,7 @@ public class PainelPedido extends JPanel {
 		bgFormaPagamento.add(jbPedir);
 		add(jlDescricaoPedido);
 		add(jtaArea);
+		add(jspArea);
 		
 		//dimencionar
 		jlPedido.setBounds(150, 10, 80, 20);
@@ -88,7 +96,7 @@ public class PainelPedido extends JPanel {
 		jlEnderecoCliente.setBounds(10, 130, 100, 20);
 		jtfEnderoCliente.setBounds(10, 150, 200, 20);
 		jlDescricaoPedido.setBounds(10, 180, 120, 20);
-		jtaArea.setBounds(10, 200, 200, 50);
+		jspArea.setBounds(10, 200, 200, 50);
 		jlFormaPagamento.setBounds(50, 280, 150, 20);
 		jrbCartao.setBounds(10, 300, 70, 20);
 		jrbVale.setBounds(110, 300, 70, 20);
