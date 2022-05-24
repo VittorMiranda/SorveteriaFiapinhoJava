@@ -16,8 +16,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
-
-
+import arquivos.EscreverLerArquivos;
 import classes.Cadastro;
 
 public class TelaLoguin extends JFrame {
@@ -26,7 +25,8 @@ public class TelaLoguin extends JFrame {
 	private JLabel jlSenha;        //utilizados na aplicação 
 	private JLabel jlLogin;        //e cada exemplo podera ser utilizado 
 	private JButton jbLogar;       //um componente diferente 
-	private JButton jbCancelar,jbCadastrar;     
+	private JButton jbCancelar,jbCadastrar;
+	private EscreverLerArquivos arquivo = new EscreverLerArquivos();
 	private JPasswordField jpfSenha; 
 	private static TelaLoguin frame;     
 	private List<Cadastro> cadastros = new ArrayList<>();	
@@ -36,14 +36,27 @@ public class TelaLoguin extends JFrame {
 		setSize(250, 250);     
 		setLayout (null); 
 		inicializarComponentes();
-		definirEventos(); 
-		
+		definirEventos();
+		abrirArquivo();
 
 	} 
 
 	
 		
 	
+
+	private void abrirArquivo() {
+		if (arquivo.lerArquivoCadastro() != null) {
+			cadastros = arquivo.lerArquivoCadastro();
+			
+			
+		}
+		
+	}
+
+
+
+
 
 	/************Metodo para inicializar componentes ****************/ 
 
