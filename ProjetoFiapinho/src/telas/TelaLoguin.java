@@ -16,7 +16,8 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
-import arquivos.EscreverLerArquivos;
+import arquivo.EscreverLerArquivo;
+
 import classes.Cadastro;
 
 public class TelaLoguin extends JFrame {
@@ -26,7 +27,7 @@ public class TelaLoguin extends JFrame {
 	private JLabel jlLogin;        //e cada exemplo podera ser utilizado 
 	private JButton jbLogar;       //um componente diferente 
 	private JButton jbCancelar,jbCadastrar;
-	private EscreverLerArquivos arquivo = new EscreverLerArquivos();
+	private EscreverLerArquivo escreverLerArquivo = new EscreverLerArquivo();
 	private JPasswordField jpfSenha; 
 	private static TelaLoguin frame;     
 	private List<Cadastro> cadastros = new ArrayList<>();	
@@ -46,8 +47,8 @@ public class TelaLoguin extends JFrame {
 	
 
 	private void abrirArquivo() {
-		if (arquivo.lerArquivoCadastro() != null) {
-			cadastros = arquivo.lerArquivoCadastro();
+		if (escreverLerArquivo.lerArquivoCadastro() != null) {
+			cadastros = escreverLerArquivo.lerArquivoCadastro();
 			
 			
 		}
