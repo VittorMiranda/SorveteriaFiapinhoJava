@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import arquivo.EscreverLerArquivo;
 import classes.Cadastro;
 
 public class TelaCadastro extends JFrame {
@@ -21,7 +22,7 @@ public class TelaCadastro extends JFrame {
 	private JButton jbCadastrar;     
 	private JPasswordField jpfSenha; 
 	private List<Cadastro> cadastros;
-	
+	private EscreverLerArquivo arquivo;
 	
 
 	public TelaCadastro(List<Cadastro> cadastros){ 
@@ -105,6 +106,8 @@ public class TelaCadastro extends JFrame {
 			String loguin = jtfLogin.getText();
 			String senha = String.valueOf(jpfSenha.getPassword());
 			cadastros.add(new Cadastro(loguin, senha));
+			EscreverLerArquivo arquivo = new EscreverLerArquivo();
+			arquivo.escreverArquivoCadastro(cadastros);
 			
 				
 				
