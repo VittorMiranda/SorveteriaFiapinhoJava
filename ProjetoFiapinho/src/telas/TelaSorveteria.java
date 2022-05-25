@@ -14,10 +14,12 @@ import javax.swing.JOptionPane;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 
-import arquivos.EscreverLerArquivos;
+import arquivo.EscreverLerArquivo;
+
 
 import java.awt.Container;
 
+import classes.Cadastro;
 import classes.Cliente;
 import classes.Produto;
 import painel.PainelCadastroProdutos;
@@ -30,9 +32,10 @@ public class TelaSorveteria extends JFrame {
 	private JMenu jmarquivo,jmcadastro,jmExibir;
 	private JMenuItem jmisair,jmiProdutos,jmiPedidos,jmiperguntas,jmiprodutos,jmipedidos;
 	private Container contentPane;
-	private EscreverLerArquivos arquivo = new EscreverLerArquivos();
+	private EscreverLerArquivo arquivo = new EscreverLerArquivo();
 	private List<Produto> produtos = new ArrayList<>();
 	private List<Cliente> clientes = new ArrayList<>();
+
 	
 	//construtor
 	public TelaSorveteria(String title) throws HeadlessException {
@@ -105,7 +108,10 @@ public class TelaSorveteria extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				int resposta = JOptionPane.showConfirmDialog(null, "Deseja sair?", "Sorveteria", JOptionPane.YES_NO_OPTION);
-				
+				if(resposta == 0) {
+					arquivo.escreverArquivo(produtos);
+					
+				}
 				System.exit(0);
 			}
 		});
