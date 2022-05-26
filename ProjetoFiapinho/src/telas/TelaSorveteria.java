@@ -1,28 +1,25 @@
 package telas;
 
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-import javax.swing.event.MenuEvent;
-import javax.swing.event.MenuListener;
 
 import arquivo.EscreverLerArquivo;
-
-
-import java.awt.Container;
-
-import classes.Cadastro;
 import classes.Cliente;
 import classes.Produto;
 import painel.PainelCadastroProdutos;
+import painel.PainelExibirPedidos;
+import painel.PainelNota;
 import painel.PainelPedido;
 import painel.PainelProdutos;
 
@@ -30,7 +27,7 @@ import painel.PainelProdutos;
 public class TelaSorveteria extends JFrame {
 	private JMenuBar Jmbbarra;
 	private JMenu jmarquivo,jmcadastro,jmExibir;
-	private JMenuItem jmisair,jmiProdutos,jmiPedidos,jmiperguntas,jmiprodutos,jmipedidos;
+	private JMenuItem jmisair,jmiProdutos,jmiMostrarPedidos,jmiperguntas,jmiprodutos,jmipedidos, jmiNotas;
 	private Container contentPane;
 	private EscreverLerArquivo arquivo = new EscreverLerArquivo();
 	private List<Produto> produtos = new ArrayList<>();
@@ -59,8 +56,6 @@ public class TelaSorveteria extends JFrame {
 		
 	}
 
-
-
 	private void iniciarComponentes() {
 		//criar objetos
 		Jmbbarra = new JMenuBar();
@@ -69,15 +64,16 @@ public class TelaSorveteria extends JFrame {
 		jmarquivo = new JMenu("Arquivo");
 		jmarquivo.setForeground(Color.white);
 		jmcadastro = new JMenu("Cadastro");
-		jmcadastro.setForeground(Color.gray);
+		jmcadastro.setForeground(Color.white);
 		jmExibir = new JMenu("Exibir");
 		jmExibir.setForeground(Color.white);
 		jmipedidos = new JMenuItem("Pedidos");
 		jmiprodutos = new JMenuItem("Produtos");
 		jmisair = new JMenuItem("Sair");
 		jmiProdutos = new JMenuItem("Produtos");
-		jmiPedidos = new JMenuItem("Pedidos");
+		jmiMostrarPedidos = new JMenuItem("Pedidos");
 		jmiperguntas = new JMenuItem("Dúvidas Frequentes");
+		jmiNotas = new JMenuItem("Notas");
 		contentPane = getContentPane();
 		
 		
@@ -96,8 +92,8 @@ public class TelaSorveteria extends JFrame {
 		
 		
 		jmExibir.add(jmiProdutos);
-		jmExibir.add(jmiPedidos);
-		
+		jmExibir.add(jmiMostrarPedidos);
+		jmExibir.add(jmiNotas);
 	
 		
 	}
@@ -152,6 +148,30 @@ jmiProdutos.addActionListener(new ActionListener() {
 				
 			}
 		});
+
+jmiMostrarPedidos.addActionListener(new ActionListener() {
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		PainelExibirPedidos exibirPedidos = new PainelExibirPedidos(clientes);
+		contentPane.removeAll();
+		contentPane.add(exibirPedidos);
+		contentPane.validate();
+		
+	}
+});
+
+jmiNotas.addActionListener(new ActionListener() {
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		PainelNota painelNota = new PainelNota(clientes);
+		contentPane.removeAll();
+		contentPane.add(painelNota);
+		contentPane.validate();
+		
+	}
+});
 	
 		
 	}
