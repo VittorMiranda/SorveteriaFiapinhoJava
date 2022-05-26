@@ -10,17 +10,22 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+import classes.Cliente;
 
 public class PainelNota extends JPanel {
 private JLabel jlnota;
+private JTextField jtfNota;
 private JButton jbpesquisar;
 private JTextArea jtanota;
 private JScrollPane jspnota;
-
+private List<Cliente> clientes;
 //CONSTRUTOR 
 
-public PainelNota() {
+public PainelNota(List<Cliente> clientes) {
 	super();
+	this.clientes = clientes;
 	setSize(400, 400);
 	setLayout(null);
 	setBackground(Color.pink);
@@ -35,6 +40,7 @@ private void iniciarComponentes() {
 	jlnota = new JLabel("Nota");
 	jbpesquisar = new JButton("Pesquisar");
 	jtanota = new JTextArea();
+	jtfNota = new JTextField();
 	jspnota = new JScrollPane(jtanota);
 	
 	//ADICIONAR
@@ -43,12 +49,14 @@ private void iniciarComponentes() {
 	add(jbpesquisar);
 	add(jtanota);
 	add(jspnota);
+	add(jtfNota);
 	
 	//DIMENSIONAMENTO
 	
-	jlnota.setBounds(150, 10, 50, 20);
-	jbpesquisar.setBounds(150, 30, 100, 20);
-	jspnota.setBounds(10, 200, 200, 50);
+	jlnota.setBounds(165, 20, 100, 20);
+	jtfNota.setBounds(90, 50, 200, 20);
+	jbpesquisar.setBounds(135, 90, 110, 20);
+	jspnota.setBounds(10, 150, 360, 200);
 	
 }
 
