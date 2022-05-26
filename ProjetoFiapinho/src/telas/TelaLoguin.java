@@ -42,10 +42,6 @@ public class TelaLoguin extends JFrame {
 
 	} 
 
-	
-		
-	
-
 	private void abrirArquivo() {
 		if (escreverLerArquivo.lerArquivoCadastro() != null) {
 			cadastros = escreverLerArquivo.lerArquivoCadastro();
@@ -54,9 +50,6 @@ public class TelaLoguin extends JFrame {
 		}
 		
 	}
-
-
-
 
 
 	/************Metodo para inicializar componentes ****************/ 

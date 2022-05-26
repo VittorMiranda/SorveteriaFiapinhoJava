@@ -110,7 +110,7 @@ public class PainelCadastroProdutos extends JPanel {
 				quantidade = Integer.parseInt(jtfquantidade.getText());
 				
 				if (jrboutros.isSelected()) tipoproduto = "Outros";
-				if (jrbsorvete.isSelected()) tipoproduto = "Sorvete";
+				if (jrbsorvete.isSelected()) tipoproduto = "Sorvetes";
 				
 				produtos.add(new Produto(validade, nome, tipoproduto, preco, peso, quantidade));
 				jtfnomeProduto.setText("");
