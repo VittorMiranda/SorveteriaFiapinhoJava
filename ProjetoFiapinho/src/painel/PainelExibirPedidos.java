@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -21,12 +22,13 @@ public class PainelExibirPedidos extends JPanel {
 	private JButton  jbPesquisar;
 	private JTextArea jtaMostrarPedidos;
 	private JScrollPane jsbMostrarPedidos;
-	private Cliente cliente;
+	private List<Cliente> clientes;
+	private PainelPedido pedido;
 
 	//construtor
-	public PainelExibirPedidos() {
+	public PainelExibirPedidos(List<Cliente> clientes) {
 		super();
-		
+		this.clientes = clientes;
 		setSize(400, 400);
 		setLayout(null);
 		setBackground(Color.gray); 
@@ -63,9 +65,27 @@ public class PainelExibirPedidos extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				jtaMostrarPedidos.setText("======================Sorvetes======================");
+				 boolean achou = false;
+				 String cpf = jtfPedidos.getText();
+				jtaMostrarPedidos.setText("======================Sorvetes======================");
+				for (Cliente cliente : clientes) {
+					if (cpf.equals(cliente.getCpf())){
+						jtaMostrarPedidos.append((clientes.indexOf(cliente)+1)+ cliente.mostrarDados());
+						achou = true;
+						break;
+						
+						}
+					}
+				if (!achou) {
+					JOptionPane.showMessageDialog(null, "Produto não encontrado!", "Sorveteria", JOptionPane.ERROR_MESSAGE);
+				}
+				jtfPedidos.setText("");
+				}
+					
+			
 			
 				
-			}
+			
 		});
 		
 	}
