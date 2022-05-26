@@ -24,7 +24,7 @@ import classes.Cliente;
 import classes.Produto;
 import painel.PainelCadastroProdutos;
 import painel.PainelPedido;
-import painel.PainelSorvete;
+import painel.PainelProdutos;
 
 
 public class TelaSorveteria extends JFrame {
@@ -40,7 +40,7 @@ public class TelaSorveteria extends JFrame {
 	//construtor
 	public TelaSorveteria(String title) throws HeadlessException {
 		super(title);
-		setSize(400, 400);
+		setSize(400, 500);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setBackground(new Color(245, 56, 56));
 		iniciarComponentes();
@@ -145,7 +145,7 @@ jmiProdutos.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PainelSorvete painelSorvete = new PainelSorvete(produtos);
+				PainelProdutos painelSorvete = new PainelProdutos(produtos);
 				contentPane.removeAll();
 				contentPane.add(painelSorvete);
 				contentPane.validate();
