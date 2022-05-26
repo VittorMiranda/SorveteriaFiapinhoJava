@@ -21,7 +21,7 @@ public class EscreverLerArquivo {
 			objeto.writeObject(produtos);
 			objeto.close();
 		} catch (FileNotFoundException e) {
-			JOptionPane.showMessageDialog(null, "Arquivo não encontrado", "Sorvateria", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Arquivo não encontrado", "Sorveteria", JOptionPane.ERROR_MESSAGE);
 			e.printStackTrace();
 		} catch (IOException e) {
 			JOptionPane.showMessageDialog(null, "Arquivo corrompido", "Sorveteria", JOptionPane.ERROR_MESSAGE);
@@ -38,13 +38,13 @@ public class EscreverLerArquivo {
 			produtos = (List<Produto>) objeto.readObject();
 			objeto.close();
 		} catch (FileNotFoundException e) {
-			JOptionPane.showMessageDialog(null, "Arquivo não encontrado", "Sorvateria", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Arquivo não encontrado", "Sorveteria", JOptionPane.ERROR_MESSAGE);
 			e.printStackTrace();
 		} catch (IOException e) {
-			JOptionPane.showMessageDialog(null, "Arquivo corrompido", "Sorvateria", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Arquivo corrompido", "Sorveteria", JOptionPane.ERROR_MESSAGE);
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			JOptionPane.showMessageDialog(null, "Classe não encontrada", "Sorvateria", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Classe não encontrada", "Sorveteria", JOptionPane.ERROR_MESSAGE);
 			e.printStackTrace();
 		}
 		return produtos;
@@ -59,10 +59,10 @@ public class EscreverLerArquivo {
 				objeto.close();
 				JOptionPane.showMessageDialog(null, "Gravado com Sucesso!");
 			} catch (FileNotFoundException e) {
-				JOptionPane.showMessageDialog(null, "Arquivo não encontrado", "Sorvateria", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Arquivo não encontrado", "Sorveteria", JOptionPane.ERROR_MESSAGE);
 				e.printStackTrace();
 			} catch (IOException e) {
-				JOptionPane.showMessageDialog(null, "Arquivo corrompido", "Sorvateria", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Arquivo corrompido", "Sorveteria", JOptionPane.ERROR_MESSAGE);
 				e.printStackTrace();
 			}
 			
@@ -76,13 +76,13 @@ public class EscreverLerArquivo {
 						cadastros = (List<Cadastro>) objeto.readObject();
 						objeto.close();
 					} catch (FileNotFoundException e) {
-						JOptionPane.showMessageDialog(null, "Arquivo não encontrado", "Sorvateria", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null, "Arquivo não encontrado", "Sorveteria", JOptionPane.ERROR_MESSAGE);
 						e.printStackTrace();
 					} catch (IOException e) {
-						JOptionPane.showMessageDialog(null, "Arquivo corrompido", "Sorvateria", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null, "Arquivo corrompido", "Sorveteria", JOptionPane.ERROR_MESSAGE);
 						e.printStackTrace();
 					} catch (ClassNotFoundException e) {
-						JOptionPane.showMessageDialog(null, "Classe não encontrada", "Sorvateria", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null, "Classe não encontrada", "Sorveteria", JOptionPane.ERROR_MESSAGE);
 						e.printStackTrace();
 					}
 					return cadastros;
