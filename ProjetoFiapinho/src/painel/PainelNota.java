@@ -13,6 +13,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import classes.Cliente;
+import classes.Produto;
 
 public class PainelNota extends JPanel {
 private JLabel jlnota;
@@ -21,6 +22,8 @@ private JButton jbpesquisar;
 private JTextArea jtanota;
 private JScrollPane jspnota;
 private List<Cliente> clientes;
+private List<Produto> produtos;
+
 //CONSTRUTOR 
 
 public PainelNota(List<Cliente> clientes) {
@@ -66,10 +69,19 @@ private void criarEventos() {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			jtanota.setText("**********Nota**********");
 			
+			jtanota.setText("======================Nota======================");
+			for (Cliente cliente : clientes) {
+				if (jtfNota.getText().equalsIgnoreCase(null)) {
+					if (clientes instanceof Cliente) {jtanota.append(cliente.mostrarDados());
+						
+					}
+				}
+				
+			}
+			}
 			
-		}
+		
 	});
 	
 }
