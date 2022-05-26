@@ -1,8 +1,9 @@
 package classes;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Cadastro {
+public class Cadastro implements Serializable {
 	private String loguin;
 	private String senha;
 
