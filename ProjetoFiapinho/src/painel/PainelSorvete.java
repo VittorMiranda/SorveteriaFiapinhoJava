@@ -27,7 +27,7 @@ public class PainelSorvete extends JPanel {
 		this.produtos = produtos;
 		setSize(400, 400);
 		setLayout(null);
-		setBackground(Color.gray); 
+		setBackground(Color.lightGray); 
 		iniciarComponentes();
 		criarEventos();
 	}
