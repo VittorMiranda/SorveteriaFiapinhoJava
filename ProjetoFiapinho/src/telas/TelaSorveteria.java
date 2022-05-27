@@ -39,7 +39,7 @@ public class TelaSorveteria extends JFrame {
 		super(title);
 		setSize(400, 500);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		getContentPane().setBackground(new Color(245, 56, 56));
+		getContentPane().setBackground(Color.lightGray);
 		iniciarComponentes();
 		criarEventos();
 		escreverLerArquivos();
