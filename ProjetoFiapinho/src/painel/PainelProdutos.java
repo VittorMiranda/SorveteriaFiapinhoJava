@@ -31,7 +31,7 @@ public class PainelProdutos extends JPanel {
 		this.produtos = produtos;
 		setSize(400, 600);
 		setLayout(null);
-		setBackground(Color.gray); 
+		setBackground(Color.lightGray); 
 		iniciarComponentes();
 		criarEventos();
 	}
