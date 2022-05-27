@@ -31,7 +31,7 @@ public PainelNota(List<Cliente> clientes) {
 	this.clientes = clientes;
 	setSize(400, 400);
 	setLayout(null);
-	setBackground(Color.pink);
+	setBackground(Color.lightGray);
 	iniciarComponentes();
 	criarEventos();
 }
