@@ -31,7 +31,7 @@ public class PainelExibirPedidos extends JPanel {
 		this.clientes = clientes;
 		setSize(400, 400);
 		setLayout(null);
-		setBackground(Color.gray); 
+		setBackground(Color.lightGray); 
 		iniciarComponentes();
 		criarEventos();
 	}
@@ -53,8 +53,8 @@ public class PainelExibirPedidos extends JPanel {
 	    //dimencionando
 	    jlPedidos.setBounds(165, 20, 100, 20);
 	    jtfPedidos.setBounds(90, 50, 200, 20);
-	    jbPesquisar.setBounds(145, 90, 110, 20);
-	    jsbMostrarPedidos.setBounds(10, 120, 360, 200);
+	    jbPesquisar.setBounds(135, 90, 110, 20);
+	    jsbMostrarPedidos.setBounds(10, 150, 360, 200);
 	    
 	    
 	}
