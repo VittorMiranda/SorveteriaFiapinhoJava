@@ -21,7 +21,7 @@ public class Teste extends JPanel {
 	
 		setSize(400, 400);//largura,altura
 		setLayout(null);		
-		setBackground(Color.BLACK);
+		setBackground(Color.lightGray);
 		iniciarComponentes();
 		criarEventos();
 	}
