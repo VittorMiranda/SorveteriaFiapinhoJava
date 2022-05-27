@@ -29,7 +29,7 @@ public class PainelCadastroProdutos extends JPanel {
 		this.produtos = produtos;
 		setSize(400, 400);
 		setLayout(null);
-		setBackground(Color.YELLOW); 
+		setBackground(Color.lightGray); 
 		iniciarComponentes();
 		criarEventos();
 	}
@@ -75,21 +75,21 @@ public class PainelCadastroProdutos extends JPanel {
 		
 		//dimencionar 
 		
-		jlcadastro.setBounds(100, 10, 80, 20);
-		jlnomeProduto.setBounds(10, 40, 240, 20);
-		jtfnomeProduto.setBounds(10, 60, 150, 20);
-		jlvalidade.setBounds(10, 90, 80, 20);
-		jtfvalidade.setBounds(10, 110, 80, 20);
-		jlpreco.setBounds(10, 140, 80, 20);
-		jtfpreco.setBounds(	10, 160, 50, 20);
-		jlquantidade.setBounds(10, 190, 100, 20);
-		jtfquantidade.setBounds(10, 210, 100, 20);
-		jlpeso.setBounds(150, 190, 50, 20);
-		jtfpeso.setBounds(150, 210, 50, 20);
-		jltipoproduto.setBounds(150, 100, 80, 20);
-		jrboutros.setBounds(145, 140, 80, 20);
-		jrbsorvete.setBounds(145, 120, 80, 20);
-		jbCadastrar.setBounds(60, 250, 100, 40);
+		jlcadastro.setBounds(150, 10, 80, 20);
+		jlnomeProduto.setBounds(60, 40, 180, 20);
+		jtfnomeProduto.setBounds(60, 60, 250, 20);
+		jlvalidade.setBounds(60, 90, 100, 20);
+		jtfvalidade.setBounds(60, 110, 100, 20);
+		jlpreco.setBounds(60, 140, 100, 20);
+		jtfpreco.setBounds(	60, 160, 100, 20);
+		jlquantidade.setBounds(60, 190, 100, 20);
+		jtfquantidade.setBounds(60, 210, 100, 20);
+		jlpeso.setBounds(200, 190, 50, 20);
+		jtfpeso.setBounds(200, 210, 110, 20);
+		jltipoproduto.setBounds(200, 100, 80, 20);
+		jrboutros.setBounds(195, 140, 80, 20);
+		jrbsorvete.setBounds(195, 120, 80, 20);
+		jbCadastrar.setBounds(135, 250, 100, 40);
 		
 		
 	}
