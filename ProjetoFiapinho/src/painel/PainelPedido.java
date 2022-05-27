@@ -23,7 +23,7 @@ public class PainelPedido extends JPanel {
 	private JRadioButton jrbCartao, jrbVale, jrbDinheiro,jrbPix;
 	private ButtonGroup bgFormaPagamento;
 	private JTextArea jtaArea;
-	private JScrollPane jspArea;
+	
 	private List<Cliente> clientes;
 	//construtor
 	public PainelPedido(List<Cliente> clientes) {
@@ -31,7 +31,7 @@ public class PainelPedido extends JPanel {
 		this.clientes = clientes;
 		setSize(400, 400);
 		setLayout(null);
-		setBackground(Color.YELLOW); 
+		setBackground(Color.lightGray); 
 		iniciarComponentes();
 		criarEventos();
 	}
@@ -44,7 +44,7 @@ public class PainelPedido extends JPanel {
 		jtfTelefone = new JTextField();
 		jlEnderecoCliente = new JLabel("Endereço:");
 		jtfEnderoCliente = new JTextField();
-		jlFormaPagamento = new JLabel("Forma de Pagamento");
+		jlFormaPagamento = new JLabel("Forma de Pagamento:");
 		jrbCartao = new JRadioButton("Cartão");
 		jrbCartao.setOpaque(false);
 		jrbVale = new JRadioButton("Vale Alimentação");
@@ -59,7 +59,7 @@ public class PainelPedido extends JPanel {
 		bgFormaPagamento = new ButtonGroup();
 		jlDescricaoPedido = new JLabel("Descrição do Pedido:");
 		jtaArea = new JTextArea();
-		jspArea = new JScrollPane(jtaArea);
+		
 		
 		//add
 		add(jlCPF);
@@ -83,26 +83,26 @@ public class PainelPedido extends JPanel {
 		bgFormaPagamento.add(jbPedir);
 		add(jlDescricaoPedido);
 		add(jtaArea);
-		add(jspArea);
+		
 		
 		//dimencionar
 		jlPedido.setBounds(150, 10, 80, 20);
-		jlNomeCliente.setBounds(10, 30, 50, 20);
-		jtfNomeCliente.setBounds(10, 50, 200, 20);
-		jlCPF.setBounds(10, 80, 50, 20);
-		jtfCPF.setBounds(10, 100, 80, 20);
-		jlTelefone.setBounds(120, 80, 100, 20);
-		jtfTelefone.setBounds(120, 100, 80, 20);
-		jlEnderecoCliente.setBounds(10, 130, 100, 20);
-		jtfEnderoCliente.setBounds(10, 150, 200, 20);
-		jlDescricaoPedido.setBounds(10, 180, 120, 20);
-		jspArea.setBounds(10, 200, 200, 50);
+		jlNomeCliente.setBounds(50, 30, 50, 25);
+		jtfNomeCliente.setBounds(50, 50, 280, 20);
+		jlCPF.setBounds(55, 80, 50, 25);
+		jtfCPF.setBounds(55, 100, 120, 20);
+		jlTelefone.setBounds(205, 80, 100, 25);
+		jtfTelefone.setBounds(205, 100, 120, 20);
+		jlEnderecoCliente.setBounds(50, 130, 100, 20);
+		jtfEnderoCliente.setBounds(50, 150, 280, 20);
+		jlDescricaoPedido.setBounds(15, 180, 120, 20);
+		jtaArea.setBounds(15, 200, 360, 50);
 		jlFormaPagamento.setBounds(120, 270, 150, 20);
 		jrbCartao.setBounds(10, 300, 70, 20);
 		jrbVale.setBounds(80, 300, 130, 20);
 		jrbDinheiro.setBounds(210, 300, 80, 20);
 		jrbPix.setBounds(290, 300, 50, 20);
-		jbPedir.setBounds(240, 200, 100, 40);
+		jbPedir.setBounds(130, 350, 100, 40);
 		
 		
 		
