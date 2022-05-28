@@ -35,6 +35,9 @@ public class PainelProdutos extends JPanel {
 		iniciarComponentes();
 		criarEventos();
 	}
+	
+	
+	
 	private void iniciarComponentes() {
 		//criando objetos
 		jlProdutos = new JLabel("Produtos");
