@@ -14,6 +14,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import classes.Cliente;
+import classes.Pedido;
 import classes.Produto;
 
 public class PainelExibirPedidos extends JPanel {
@@ -22,13 +23,12 @@ public class PainelExibirPedidos extends JPanel {
 	private JButton  jbPesquisar;
 	private JTextArea jtaMostrarPedidos;
 	private JScrollPane jsbMostrarPedidos;
-	private List<Cliente> clientes;
-	private PainelPedido pedido;
+	private List<Pedido> pedidos;
 
 	//construtor
-	public PainelExibirPedidos(List<Cliente> clientes) {
+	public PainelExibirPedidos(List<Pedido> pedidos) {
 		super();
-		this.clientes = clientes;
+		this.pedidos = pedidos;
 		setSize(400, 400);
 		setLayout(null);
 		setBackground(Color.lightGray); 
@@ -67,15 +67,16 @@ public class PainelExibirPedidos extends JPanel {
 				jtaMostrarPedidos.setText("======================Sorvetes======================");
 				 boolean achou = false;
 				 String cpf = jtfPedidos.getText();
-				jtaMostrarPedidos.setText("======================Sorvetes======================");
-				for (Cliente cliente : clientes) {
-					if (cpf.equals(cliente.getCpf())){
-						jtaMostrarPedidos.append((clientes.indexOf(cliente)+1)+ cliente.mostrarDados());
+				for (Pedido pedido : pedidos) {
+					if (cpf.equals(pedido.getCpf())){
+						jtaMostrarPedidos.append((pedidos.indexOf(pedido)+1)+ pedido.mostrarDados());
 						achou = true;
 						break;
 						
 						}
-					}
+				}
+					
+					
 				if (!achou) {
 					JOptionPane.showMessageDialog(null, "Produto não encontrado!", "Sorveteria", JOptionPane.ERROR_MESSAGE);
 				}
