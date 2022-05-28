@@ -23,4 +23,9 @@ public String mostrarDados() {
 	return "\nNome: " + this.nome + "\nCliente: " + this.cliente + "\nFuncionário: " + this.funcionario + "\nProdutos: " + this.produtos + "\nEndereço: " +
 this.endereco + "\nTelefone: " + this.telefone + "\nPedidos: " + this.pedidos;
 }
+
+public String mostrarDadosNota() {
+	return "\nNome: " + this.nome + "\nEndereço: " +
+			this.endereco;
+}
 }
