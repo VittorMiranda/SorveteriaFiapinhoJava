@@ -1,17 +1,33 @@
 package classes;
-import classes.Cliente;
-import classes.Produto;
 
 
 public class Nota {
-	private double peso,quantidade,preco;
-	private Cliente cliente;
-	private Produto produto;
-public double numeropedido() {
- return 0;
-}
+	private double total,quantidade,preco;
+	
+	
+	
+//construtor
+	public Nota(double quantidade, double preco) {
+		super();
+		this.quantidade = quantidade;
+		this.preco = preco;
+
+	}
+
+//metodos
+
+
+
 
 public double totalM() {
-	return quantidade*preco;
+	return total = quantidade*30;
 }
+
+
+
+public String mostrarDadosNota() {
+	return "\nTotal" + total;
 }
+
+}
+
