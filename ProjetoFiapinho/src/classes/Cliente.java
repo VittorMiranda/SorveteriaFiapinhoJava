@@ -15,31 +15,15 @@ public Cliente(String nome, String telefone, String endereco, String formaPagame
 }
 
 
-
-
-
-
 public String getCpf() {
 	return cpf;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public String mostrarDados() {
-	return "\nDados Cliente: " +  mostrarDados() + "\nForma de pagamento: " + this.formaPagamento + "CPF: " + this.cpf;
+	return "\nDados Cliente: " +  mostrarDados() + "\nForma de pagamento: " + this.formaPagamento + "\nCPF: " + this.cpf;
 }
-
+public String mostrarDadosNota() {
+	return "\nForma de pagamento: " + this.formaPagamento+"CPF: " + this.cpf;
+}
 
 }
