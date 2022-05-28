@@ -8,6 +8,7 @@ import java.util.List;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
@@ -92,6 +93,7 @@ public class PainelCadastroProdutos extends JPanel {
 		jbCadastrar.setBounds(135, 250, 100, 40);
 		
 		
+		
 	}
 
 	private void criarEventos() {
@@ -103,16 +105,24 @@ public class PainelCadastroProdutos extends JPanel {
 				double preco,peso = 0;
 				int quantidade = 0;
 				
-				validade = jtfvalidade.getText();
-				nome = jtfnomeProduto.getText();
-				preco = Double.parseDouble(jtfpreco.getText());
-				peso = Double.parseDouble(jtfpeso.getText());
-				quantidade = Integer.parseInt(jtfquantidade.getText());
+				if (!jtfnomeProduto.getText().isEmpty() && !jtfpreco.getText().isEmpty() && !jtfvalidade.getText().isEmpty() && !jtfpeso.getText().isEmpty() && !jtfquantidade.getText().isEmpty()) {
+					
+
+					validade = jtfvalidade.getText();
+					nome = jtfnomeProduto.getText();
+					preco = Double.parseDouble(jtfpreco.getText());
+					peso = Double.parseDouble(jtfpeso.getText());
+					quantidade = Integer.parseInt(jtfquantidade.getText());
+					
+					if (jrboutros.isSelected()) tipoproduto = "Outros";
+					if (jrbsorvete.isSelected()) tipoproduto = "Sorvetes";
+					
+					produtos.add(new Produto(validade, nome, tipoproduto, preco, peso, quantidade));
+					
+				} else {
+					JOptionPane.showMessageDialog(null, "Prenncha todos os campos!", "Sorveteria", JOptionPane.ERROR_MESSAGE);
+				}
 				
-				if (jrboutros.isSelected()) tipoproduto = "Outros";
-				if (jrbsorvete.isSelected()) tipoproduto = "Sorvetes";
-				
-				produtos.add(new Produto(validade, nome, tipoproduto, preco, peso, quantidade));
 				jtfnomeProduto.setText("");
 				jtfpeso.setText("");
 				jtfpreco.setText("");
