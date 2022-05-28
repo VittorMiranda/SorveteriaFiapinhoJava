@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 
 import arquivo.EscreverLerArquivo;
 import classes.Cliente;
+import classes.Pedido;
 import classes.Produto;
 import painel.PainelCadastroProdutos;
 import painel.PainelExibirPedidos;
@@ -30,8 +31,10 @@ public class TelaSorveteria extends JFrame {
 	private JMenuItem jmisair,jmiProdutos,jmiMostrarPedidos,jmiperguntas,jmiprodutos,jmipedidos, jmiNotas;
 	private Container contentPane;
 	private EscreverLerArquivo arquivo = new EscreverLerArquivo();
+	private List<Pedido> pedidos = new ArrayList<>();
 	private List<Produto> produtos = new ArrayList<>();
 	private List<Cliente> clientes = new ArrayList<>();
+	
 
 	
 	//construtor
@@ -116,7 +119,7 @@ public class TelaSorveteria extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PainelPedido painelPedido = new PainelPedido(clientes);
+				PainelPedido painelPedido = new PainelPedido(pedidos);
 				contentPane.removeAll();
 				contentPane.add(painelPedido);
 				contentPane.validate();
@@ -153,7 +156,7 @@ jmiMostrarPedidos.addActionListener(new ActionListener() {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		PainelExibirPedidos exibirPedidos = new PainelExibirPedidos(clientes);
+		PainelExibirPedidos exibirPedidos = new PainelExibirPedidos(pedidos);
 		contentPane.removeAll();
 		contentPane.add(exibirPedidos);
 		contentPane.validate();
@@ -165,7 +168,7 @@ jmiNotas.addActionListener(new ActionListener() {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		PainelNota painelNota = new PainelNota(clientes);
+		PainelNota painelNota = new PainelNota(pedidos);
 		contentPane.removeAll();
 		contentPane.add(painelNota);
 		contentPane.validate();
