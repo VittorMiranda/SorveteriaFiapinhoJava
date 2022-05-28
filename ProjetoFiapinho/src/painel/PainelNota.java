@@ -13,6 +13,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import classes.Cliente;
+import classes.Pedido;
 import classes.Produto;
 
 public class PainelNota extends JPanel {
@@ -21,14 +22,14 @@ private JTextField jtfNota;
 private JButton jbpesquisar;
 private JTextArea jtanota;
 private JScrollPane jspnota;
-private List<Cliente> clientes;
-private List<Produto> produtos;
+private List<Pedido> pedidos;
+
 
 //CONSTRUTOR 
 
-public PainelNota(List<Cliente> clientes) {
+public PainelNota(List<Pedido> pedidos) {
 	super();
-	this.clientes = clientes;
+	this.pedidos = pedidos;
 	setSize(400, 400);
 	setLayout(null);
 	setBackground(Color.lightGray);
@@ -71,13 +72,12 @@ private void criarEventos() {
 		public void actionPerformed(ActionEvent e) {
 			
 			jtanota.setText("======================Nota======================");
-			for (Cliente cliente : clientes) {
+			for (Pedido pedido : pedidos) {
 				if (jtfNota.getText().equalsIgnoreCase(null)) {
-					if (clientes instanceof Cliente) {jtanota.append(cliente.mostrarDados());
+					if (pedidos instanceof Pedido) {jtanota.append(pedido.mostrarDadosNota());
 						
 					}
 				}
-				
 			}
 			}
 			
