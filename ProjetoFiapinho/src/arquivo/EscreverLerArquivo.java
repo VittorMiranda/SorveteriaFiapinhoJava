@@ -11,6 +11,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import classes.Cadastro;
+import classes.Pedido;
 import classes.Produto;
 
 public class EscreverLerArquivo {
@@ -50,6 +51,8 @@ public class EscreverLerArquivo {
 		return produtos;
 			
 	}
+	
+				
 	//escrever o arquivo cadastro
 		public void escreverArquivoCadastro(List<Cadastro> cadastros) {
 			try {
@@ -87,5 +90,48 @@ public class EscreverLerArquivo {
 					}
 					return cadastros;
 				}
+				
+				//escrever o arquivo pedido
+				public void escreverArquivoPedidos(List<Pedido> pedidos) {
+					try {
+						FileOutputStream saida = new FileOutputStream("Pedido.bin");
+						ObjectOutputStream objeto = new ObjectOutputStream(saida);
+						objeto.writeObject(pedidos);
+						objeto.close();
+						JOptionPane.showMessageDialog(null, "Gravado com Sucesso!");
+					} catch (FileNotFoundException e) {
+						JOptionPane.showMessageDialog(null, "Arquivo não encontrado", "Sorveteria", JOptionPane.ERROR_MESSAGE);
+						e.printStackTrace();
+					} catch (IOException e) {
+						JOptionPane.showMessageDialog(null, "Arquivo corrompido", "Sorveteria", JOptionPane.ERROR_MESSAGE);
+						e.printStackTrace();
+					}
+				}
+				// ler arquivo pedidos
+				public List<Pedido> lerArquivoPedido(){
+					List<Pedido> pedidos = null;
+					try {
+						FileInputStream entrada = new FileInputStream("Pedido.bin");
+						ObjectInputStream objeto = new ObjectInputStream(entrada);
+						pedidos = (List<Pedido>) objeto.readObject();
+						objeto.close();
+					} catch (FileNotFoundException e) {
+						JOptionPane.showMessageDialog(null, "Arquivo não encontrado", "Sorveteria", JOptionPane.ERROR_MESSAGE);
+						e.printStackTrace();
+					} catch (IOException e) {
+						JOptionPane.showMessageDialog(null, "Arquivo corrompido", "Sorveteria", JOptionPane.ERROR_MESSAGE);
+						e.printStackTrace();
+					} catch (ClassNotFoundException e) {
+						JOptionPane.showMessageDialog(null, "Classe não encontrada", "Sorveteria", JOptionPane.ERROR_MESSAGE);
+						e.printStackTrace();
+					}
+					return pedidos;
+					
+					
+				}
+				
+				
+				
+				
 
 }
