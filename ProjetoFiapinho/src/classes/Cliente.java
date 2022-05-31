@@ -1,6 +1,8 @@
 package classes;
 
-public class Cliente extends Pessoa {
+import java.io.Serializable;
+
+public class Cliente extends Pessoa implements Serializable{
 
 private String formaPagamento;
 private String cpf;
@@ -23,7 +25,7 @@ public String mostrarDados() {
 	return "\nDados Cliente: " +  mostrarDados() + "\nForma de pagamento: " + this.formaPagamento + "\nCPF: " + this.cpf;
 }
 public String mostrarDadosNota() {
-	return "\nForma de pagamento: " + this.formaPagamento+"CPF: " + this.cpf;
+	return "\nCPF: " + this.cpf + "\nForma de pagamento: " + this.formaPagamento;
 }
 
 }
