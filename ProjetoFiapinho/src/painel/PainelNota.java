@@ -7,11 +7,13 @@ import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import arquivo.EscreverLerArquivo;
 import classes.Cliente;
 import classes.Pedido;
 import classes.Produto;
@@ -23,6 +25,7 @@ private JButton jbpesquisar;
 private JTextArea jtanota;
 private JScrollPane jspnota;
 private List<Pedido> pedidos;
+private EscreverLerArquivo arquivo = new EscreverLerArquivo();
 
 
 //CONSTRUTOR 
@@ -35,7 +38,15 @@ public PainelNota(List<Pedido> pedidos) {
 	setBackground(Color.lightGray);
 	iniciarComponentes();
 	criarEventos();
+	
+	
 }
+
+private void escreverLerArquivo() {
+	
+	
+}
+
 
 private void iniciarComponentes() {
 	
@@ -51,7 +62,6 @@ private void iniciarComponentes() {
 	
 	add(jlnota);
 	add(jbpesquisar);
-	add(jtanota);
 	add(jspnota);
 	add(jtfNota);
 	
@@ -70,20 +80,24 @@ private void criarEventos() {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			
 			jtanota.setText("======================Nota======================");
+			boolean achou = false;
+			 String cpf = jtfNota.getText();
 			for (Pedido pedido : pedidos) {
-				if (jtfNota.getText().equalsIgnoreCase(null)) {
-					if (pedidos instanceof Pedido) {jtanota.append(pedido.mostrarDadosNota());
-						
-					}
-				}
+			if (cpf.equals(pedido.getCpf())) {
+				jtanota.append((pedidos.indexOf(pedido)+1)+pedido.mostrarDadosPedido());
+				achou = true;
+				break;
 			}
 			}
+			if (!achou) {
+				JOptionPane.showMessageDialog(null, "Pedido não encontrado!", "Sorveteria", JOptionPane.ERROR_MESSAGE);
+			}
+			jtfNota.setText("");
 			
 		
-	});
+		}});
 	
-}
+}}
 
-}
+
