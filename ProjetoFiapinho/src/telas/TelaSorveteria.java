@@ -3,6 +3,7 @@ package telas;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.HeadlessException;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -31,7 +32,7 @@ public class TelaSorveteria extends JFrame {
 	private JMenuItem jmisair,jmiProdutos,jmiMostrarPedidos,jmiperguntas,jmiprodutos,jmipedidos, jmiNotas;
 	private Container contentPane;
 	private EscreverLerArquivo arquivo = new EscreverLerArquivo();
-	private List<Pedido> pedidos = new ArrayList<>();
+	private List<Pedido> pedidos  = new ArrayList<>();
 	private List<Produto> produtos = new ArrayList<>();
 	private List<Cliente> clientes = new ArrayList<>();
 	
@@ -54,7 +55,9 @@ public class TelaSorveteria extends JFrame {
 	private void escreverLerArquivos() {
 		if (arquivo.lerArquivo() != null) {
 			produtos = arquivo.lerArquivo();
-			
+		}
+		if (arquivo.lerArquivoPedido() != null) {
+			pedidos = arquivo.lerArquivoPedido();
 		}
 		
 	}
@@ -109,7 +112,7 @@ public class TelaSorveteria extends JFrame {
 				int resposta = JOptionPane.showConfirmDialog(null, "Deseja sair?", "Sorveteria", JOptionPane.YES_NO_OPTION);
 				if(resposta == 0) {
 					arquivo.escreverArquivo(produtos);
-					
+					arquivo.escreverArquivoPedidos(pedidos);
 				}
 				System.exit(0);
 			}
