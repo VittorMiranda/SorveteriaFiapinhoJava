@@ -13,9 +13,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import classes.Cliente;
+import arquivo.EscreverLerArquivo;
 import classes.Pedido;
-import classes.Produto;
+
 
 public class PainelExibirPedidos extends JPanel {
 	private JLabel jlPedidos;
@@ -24,6 +24,7 @@ public class PainelExibirPedidos extends JPanel {
 	private JTextArea jtaMostrarPedidos;
 	private JScrollPane jsbMostrarPedidos;
 	private List<Pedido> pedidos;
+	
 
 	//construtor
 	public PainelExibirPedidos(List<Pedido> pedidos) {
@@ -34,7 +35,11 @@ public class PainelExibirPedidos extends JPanel {
 		setBackground(Color.lightGray); 
 		iniciarComponentes();
 		criarEventos();
+		
 	}
+	
+	//metodos
+	
 	private void iniciarComponentes() {
 		//criando objetos
 		jlPedidos = new JLabel("Pedidos");
@@ -58,6 +63,9 @@ public class PainelExibirPedidos extends JPanel {
 	    
 	    
 	}
+	
+	
+	
 	private void criarEventos() {
 		
 		jbPesquisar.addActionListener(new ActionListener() {
@@ -78,7 +86,7 @@ public class PainelExibirPedidos extends JPanel {
 					
 					
 				if (!achou) {
-					JOptionPane.showMessageDialog(null, "Produto não encontrado!", "Sorveteria", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Pedido não encontrado!", "Sorveteria", JOptionPane.ERROR_MESSAGE);
 				}
 				jtfPedidos.setText("");
 				}
