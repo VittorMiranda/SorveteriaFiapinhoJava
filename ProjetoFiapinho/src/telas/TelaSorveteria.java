@@ -34,9 +34,6 @@ public class TelaSorveteria extends JFrame {
 	private EscreverLerArquivo arquivo = new EscreverLerArquivo();
 	private List<Pedido> pedidos  = new ArrayList<>();
 	private List<Produto> produtos = new ArrayList<>();
-	private List<Cliente> clientes = new ArrayList<>();
-	
-
 	
 	//construtor
 	public TelaSorveteria(String title) throws HeadlessException {
@@ -55,12 +52,15 @@ public class TelaSorveteria extends JFrame {
 	private void escreverLerArquivos() {
 		if (arquivo.lerArquivo() != null) {
 			produtos = arquivo.lerArquivo();
-		}
-		if (arquivo.lerArquivoPedido() != null) {
-			pedidos = arquivo.lerArquivoPedido();
-		}
+			
 		
+		}
+		if (arquivo.lerAquivoPedidos() !=null) {
+			pedidos = arquivo.lerAquivoPedidos();
+		}
+			
 	}
+	
 
 	private void iniciarComponentes() {
 		//criar objetos
@@ -109,11 +109,13 @@ public class TelaSorveteria extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				int resposta = JOptionPane.showConfirmDialog(null, "Deseja sair?", "Sorveteria", JOptionPane.YES_NO_OPTION);
+				int resposta = JOptionPane.showConfirmDialog(null, "Deseja gravar e sair?", "Sorveteria", JOptionPane.YES_NO_OPTION);
 				if(resposta == 0) {
 					arquivo.escreverArquivo(produtos);
-					arquivo.escreverArquivoPedidos(pedidos);
+					arquivo.escreverArquivoPedido(pedidos);
+					
 				}
+				
 				System.exit(0);
 			}
 		});
