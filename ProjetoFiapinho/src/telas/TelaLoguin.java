@@ -134,7 +134,7 @@ public class TelaLoguin extends JFrame {
 					}
 				}
 				if (!achou) {
-					JOptionPane.showMessageDialog(null, "Usuario ou senha incorreta!", "Transportadora", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Usuario ou senha incorreta!", "Sorveteria", JOptionPane.ERROR_MESSAGE);
 					
 				}
 		}
