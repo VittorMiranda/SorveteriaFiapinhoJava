@@ -3,6 +3,7 @@ package painel;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.ButtonGroup;
@@ -15,8 +16,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import classes.Cliente;
-import classes.Nota;
+import arquivo.EscreverLerArquivo;
+
 import classes.Pedido;
 
 public class PainelPedido extends JPanel {
@@ -26,8 +27,9 @@ public class PainelPedido extends JPanel {
 	private JRadioButton jrbCartao, jrbVale, jrbDinheiro,jrbPix;
 	private ButtonGroup bgFormaPagamento;
 	private JTextArea jtaArea;
-	private Nota nota;
+	private EscreverLerArquivo arquivo = new EscreverLerArquivo();
 	private List<Pedido> pedidos;
+	
 	//construtor
 	public PainelPedido(List<Pedido> pedidos) {
 		super();
@@ -37,13 +39,15 @@ public class PainelPedido extends JPanel {
 		setBackground(Color.lightGray); 
 		iniciarComponentes();
 		criarEventos();
-	}
+	    	    
+		}
+	
+	
 	
 	//metodos
-	
 
-	
-	
+
+
 
 	private void iniciarComponentes() {
 		jlPedido = new JLabel("Pedido");
@@ -145,6 +149,8 @@ public class PainelPedido extends JPanel {
 					descricao = jtaArea.getText();
 					telefone = jtfTelefone.getText();
 					cpf = jtfCPF.getText();
+					sorvete = jtfSorvete.getText();
+					quantidade = Double.parseDouble(jtfQuantidade.getText()) ;
 					
 					if(jrbCartao.isSelected()) formapagamento = "Crédito";
 					if(jrbVale.isSelected()) formapagamento = "Vale alimentação";
@@ -163,7 +169,8 @@ public class PainelPedido extends JPanel {
 				jtfNomeCliente.setText("");
 				jtfTelefone.setText("");
 				jtaArea.setText("");
-				
+				jtfSorvete.setText("");
+				jtfQuantidade.setText("");
 				
 				
 				
