@@ -1,7 +1,7 @@
 package classes;
 import java.io.Serializable;
 
-import classes.Sorveteria2;
+
 
 public class Pedido extends Cliente implements Serializable{
 	private String descricao, sorvete;
