@@ -2,10 +2,12 @@ package telas;
 
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Desktop;
 import java.awt.HeadlessException;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -177,6 +179,19 @@ jmiNotas.addActionListener(new ActionListener() {
 		contentPane.removeAll();
 		contentPane.add(painelNota);
 		contentPane.validate();
+		
+	}
+});
+jmiperguntas.addActionListener(new ActionListener() {
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		try {
+			URI link = new URI("https://raphaelsilval.github.io/Site-Sorveteria/tutorial.html");
+			Desktop.getDesktop().browse(link);
+		} catch (Exception e2) {
+			JOptionPane.showMessageDialog(null, "Sorveteria", "Erro", JOptionPane.ERROR_MESSAGE);
+		}
 		
 	}
 });
